@@ -22,14 +22,14 @@ interface InputExpr {
  * @param {Options} options The options to use for this operation
  * @returns {*}
  */
-export const $lastN: AccumulatorOperator = (
+export let $lastN: AccumulatorOperator = (
   collection: AnyObject[],
   expr: InputExpr,
   options: Options
 ): Any[] => {
-  const copts = ComputeOptions.init(options);
-  const m = collection.length;
-  const n = computeValue(copts?.local?.groupId, expr.n, null, copts) as number;
+  let copts = ComputeOptions.init(options);
+  let m = collection.length;
+  let n = computeValue(copts?.local?.groupId, expr.n, null, copts) as number;
   return $push(
     m <= n ? collection : collection.slice(m - n),
     expr.input,
