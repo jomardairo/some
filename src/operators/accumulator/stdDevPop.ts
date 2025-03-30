@@ -12,7 +12,7 @@ import { $push } from "./push";
  * @param {Options} options The options to use for this operation
  * @return {Number}
  */
-export const $stdDevPop: AccumulatorOperator = (
+export let $stdDevPop: AccumulatorOperator = (
   collection: AnyObject[],
   expr: Any,
   options: Options
