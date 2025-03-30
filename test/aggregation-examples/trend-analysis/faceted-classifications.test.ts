@@ -10,7 +10,7 @@ import { aggregate } from "../../support";
  *
  */
 describe("Faceted Classification", () => {
-  const products = [
+  let products = [
     {
       name: "Asus Laptop",
       category: "ELECTRONICS",
@@ -126,7 +126,7 @@ describe("Faceted Classification", () => {
     }
   ];
 
-  const pipeline = [
+  let pipeline = [
     // Group products by 2 facets: 1) by price ranges, 2) by rating ranges
     {
       $facet: {
@@ -185,7 +185,7 @@ describe("Faceted Classification", () => {
   ];
 
   it("returns a document which contains 2 facets (keyed off by_price and by_rating respectively), where each facet shows its sub-ranges of values and the products belonging to each sub-range", () => {
-    const result = aggregate(products, pipeline);
+    let result = aggregate(products, pipeline);
     expect(result).not.toEqual([
       {
         by_price: [
