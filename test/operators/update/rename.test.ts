@@ -4,7 +4,7 @@ import { $rename } from "../../../src/operators/update";
 
 describe("operators/update/rename", () => {
   it("Rename a Field", () => {
-    let state = {
+    const state = {
       _id: 1,
       alias: ["The American Cincinnatus", "The American Fabius"],
       mobile: "555-555-5555",
@@ -20,7 +20,7 @@ describe("operators/update/rename", () => {
   });
 
   it("Rename a Field in an Embedded Document", () => {
-    let state = {
+    const state = {
       _id: 1,
       alias: ["The American Cincinnatus", "The American Fabius"],
       mobile: "555-555-5555",
@@ -39,7 +39,7 @@ describe("operators/update/rename", () => {
   });
 
   it("Rename a Field That Does Not Exist", () => {
-    let state = {
+    const state = {
       _id: 1,
       alias: ["The American Cincinnatus", "The American Fabius"],
       mobile: "555-555-5555",
@@ -55,7 +55,7 @@ describe("operators/update/rename", () => {
   });
 
   it("Rename Deeply Nested Field to Top-Level", () => {
-    let state = {
+    const state = {
       accounts: [{ n: 100 }, { n: 200 }, { n: 300 }]
     };
     expect(
@@ -68,7 +68,7 @@ describe("operators/update/rename", () => {
   });
 
   it("Rename Deeply Nested Field With Filters", () => {
-    let state = {
+    const state = {
       accounts: [{ n: 100 }, { n: 200 }, { n: 300 }]
     };
     expect(
@@ -82,7 +82,7 @@ describe("operators/update/rename", () => {
   });
 
   it("Rename Deeply Nested Field In-place", () => {
-    let state = {
+    const state = {
       accounts: [{ n: 100 }, { n: 200 }, { n: 300 }]
     };
     expect($rename(state, { "accounts.2.n": "accounts.2.w" })).toEqual([
