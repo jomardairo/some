@@ -5,4 +5,4 @@ import { $eq as __eq, createQueryOperator } from "../../_predicates";
 /**
  * Matches values that are equal to a specified value.
  */
-export const $eq = createQueryOperator(__eq);
+export let $eq = createQueryOperator(__eq);
