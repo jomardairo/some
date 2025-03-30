@@ -11,12 +11,12 @@ import { assert, isNil, isNumber } from "../../../util";
  * @param expr
  * @returns {number}
  */
-export const $sqrt: ExpressionOperator = (
+export let $sqrt: ExpressionOperator = (
   obj: AnyObject,
   expr: Any,
   options: Options
 ): number | null => {
-  const n = computeValue(obj, expr, null, options) as number;
+  let n = computeValue(obj, expr, null, options) as number;
   if (isNil(n)) return null;
   assert(
     (isNumber(n) && n > 0) || isNaN(n),
