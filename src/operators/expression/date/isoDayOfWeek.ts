@@ -9,7 +9,7 @@ import { computeDate } from "./_internal";
  * @param obj
  * @param expr
  */
-export const $isoDayOfWeek: ExpressionOperator<number> = (
+export let $isoDayOfWeek: ExpressionOperator<number> = (
   obj: AnyObject,
   expr: Any,
   options: Options
