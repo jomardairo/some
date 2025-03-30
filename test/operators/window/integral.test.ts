@@ -2,7 +2,7 @@ import { aggregate } from "../../../src";
 import { ProcessingMode } from "../../../src/core";
 import { DEFAULT_OPTS } from "../../support";
 
-const options = {
+let options = {
   ...DEFAULT_OPTS,
   processingMode: ProcessingMode.CLONE_INPUT
 };
@@ -10,7 +10,7 @@ const options = {
 describe("operators/window/integral", () => {
   describe("$integral", () => {
     it("Can Compute Integral with Unit", () => {
-      const result = aggregate(
+      let result = aggregate(
         [
           {
             powerMeterID: "1",
