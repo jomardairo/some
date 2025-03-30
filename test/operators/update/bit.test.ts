@@ -4,7 +4,7 @@ import { $bit } from "../../../src/operators/update";
 
 describe("operators/update/bit", () => {
   it("should apply bitwise AND, OR, XOR on values.", () => {
-    let state = {
+    const state = {
       AND: [13, 3, 1],
       OR: [13, 3, 1],
       XOR: [13, 3, 1]
@@ -24,7 +24,7 @@ describe("operators/update/bit", () => {
   });
 
   it("should build object graph for missing value.", () => {
-    let state = {
+    const state = {
       _id: 1
     };
 
