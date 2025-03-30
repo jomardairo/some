@@ -14,12 +14,12 @@ import { assert, isNil, isString } from "../../../util";
  * @param  {Array} expr
  * @return {Array} Returns an array of substrings.
  */
-export const $split: ExpressionOperator = (
+export let $split: ExpressionOperator = (
   obj: AnyObject,
   expr: Any,
   options: Options
 ): Any => {
-  const args = computeValue(obj, expr, null, options) as string[];
+  let args = computeValue(obj, expr, null, options) as string[];
   if (isNil(args[0])) return null;
   assert(
     args.every(isString),
