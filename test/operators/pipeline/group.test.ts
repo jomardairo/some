@@ -1,7 +1,7 @@
 import { aggregate } from "../../../src";
 import * as samples from "../../support";
 
-const book = [
+let book = [
   { _id: 8751, title: "The Banquet", author: "Dante", copies: 2 },
   { _id: 8752, title: "Divine Comedy", author: "Dante", copies: 1 },
   { _id: 8645, title: "Eclogues", author: "Dante", copies: 2 },
