@@ -9,4 +9,4 @@ import { $toDouble } from "./toDouble";
  * If the value is null or missing, $toDecimal returns null.
  * This is just an alias for `$toDouble` in this library.
  */
-export const $toDecimal = $toDouble;
+export let $toDecimal = $toDouble;
