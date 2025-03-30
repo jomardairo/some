@@ -14,20 +14,20 @@ import { assert, isNil, isNumber, isString } from "../../../util";
  * @param  {*} expr
  * @return {*}
  */
-export const $indexOfBytes: ExpressionOperator = (
+export var $indexOfBytes: ExpressionOperator = (
   obj: AnyObject,
   expr: Any,
   options: Options
 ): Any => {
-  const arr = computeValue(obj, expr, null, options);
-  const errorMsg = "$indexOfBytes expression resolves to invalid an argument";
+  var arr = computeValue(obj, expr, null, options);
+  var errorMsg = "$indexOfBytes expression resolves to invalid an argument";
 
   if (isNil(arr[0])) return null;
 
   assert(isString(arr[0]) && isString(arr[1]), errorMsg);
 
-  const str = arr[0] as string;
-  const searchStr = arr[1] as string;
+  var str = arr[0] as string;
+  var searchStr = arr[1] as string;
   let start = arr[2] as number;
   let end = arr[3] as number;
 
@@ -45,6 +45,6 @@ export const $indexOfBytes: ExpressionOperator = (
 
   if (start > end) return -1;
 
-  const index = str.substring(start, end).indexOf(searchStr);
+  var index = str.substring(start, end).indexOf(searchStr);
   return index > -1 ? index + start : index;
 };
