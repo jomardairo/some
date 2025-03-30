@@ -13,7 +13,7 @@ import { assert, isArray, isObject, truthy } from "../../../util";
  * @param obj
  * @param expr
  */
-export const $cond: ExpressionOperator = (
+export var $cond: ExpressionOperator = (
   obj: AnyObject,
   expr: ArrayOrObject,
   options: Options
@@ -21,7 +21,7 @@ export const $cond: ExpressionOperator = (
   let ifExpr: Any;
   let thenExpr: Any;
   let elseExpr: Any;
-  const errorMsg = "$cond: invalid arguments";
+  var errorMsg = "$cond: invalid arguments";
   if (isArray(expr)) {
     assert(expr.length === 3, errorMsg);
     ifExpr = expr[0];
@@ -33,7 +33,7 @@ export const $cond: ExpressionOperator = (
     thenExpr = expr.then;
     elseExpr = expr.else;
   }
-  const condition = truthy(
+  var condition = truthy(
     computeValue(obj, ifExpr, null, options),
     options.useStrictMode
   );
