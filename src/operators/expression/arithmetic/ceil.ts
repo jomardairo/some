@@ -11,12 +11,12 @@ import { assert, isNil, isNumber } from "../../../util";
  * @param expr
  * @returns {number}
  */
-export let $ceil: ExpressionOperator = (
+export const $ceil: ExpressionOperator = (
   obj: AnyObject,
   expr: Any,
   options: Options
 ): number | null => {
-  let n = computeValue(obj, expr, null, options) as number;
+  const n = computeValue(obj, expr, null, options) as number;
   if (isNil(n)) return null;
   assert(isNumber(n) || isNaN(n), "$ceil expression must resolve to a number.");
   return Math.ceil(n);
